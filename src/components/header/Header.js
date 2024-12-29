@@ -8,14 +8,17 @@ function BasicExample() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <NavbarBrand href="#">Sweta Sahu</NavbarBrand>
+        <NavbarBrand href="/">&lt;\Sweta Sahu&gt;</NavbarBrand>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink href="#">About</NavLink>
-            <NavLink href="#">Education</NavLink>
-            <NavLink href="#">Experience</NavLink>
-            <NavLink href="#">Projects</NavLink>
+          <Nav className="ms-auto">
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/about">About</NavLink>
+            <NavLink href="/skills">Skills</NavLink>
+            <NavLink href="/education">Education</NavLink>
+            <NavLink href="/experience">Experience</NavLink>
+            <NavLink href="/">Projects</NavLink>
+            <NavLink href="/">Contact</NavLink>
           </Nav>
         </NavbarCollapse>
       </Container>
