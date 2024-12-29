@@ -17,8 +17,7 @@ function BasicExample() {
             <NavLink href="/skills">Skills</NavLink>
             <NavLink href="/education">Education</NavLink>
             <NavLink href="/experience">Experience</NavLink>
-            <NavLink href="/">Projects</NavLink>
-            <NavLink href="/">Contact</NavLink>
+            <NavLink href="/projects">Projects</NavLink>
           </Nav>
         </NavbarCollapse>
       </Container>

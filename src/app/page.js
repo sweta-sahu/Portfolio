@@ -7,6 +7,7 @@ import About from "../components/pages/About";
 import Skills from "../components/pages/Skills";
 import Education from "../components/pages/Education";
 import Experience from "../components/pages/Experience";
+import Projects from "../components/pages/Projects";
 
 export default function Main() {
   return (
@@ -19,6 +20,7 @@ export default function Main() {
           <Route path="skills" element={<Skills />} />
           <Route path="education" element={<Education />} />
           <Route path="experience" element={<Experience />} />
+          <Route path="projects" element={<Projects />} />
         </Routes>
       </BrowserRouter>
     </>

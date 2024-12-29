@@ -27,7 +27,7 @@ function Home() {
                     style={{ textDecoration: 'none', backgroundColor: 'black', color: 'white', padding: '10px 20px', borderRadius: '5px', fontSize: '16px',textAlign: 'center'}}>
                   Resume
                 </a>
-                <a href="/contact"
+                <a href="mailto:swetasah@buffalo.edu"
                   style={{
                     textDecoration: 'none',
                     backgroundColor: 'grey',
