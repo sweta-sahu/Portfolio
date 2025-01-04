@@ -1,75 +1,53 @@
-import {Row, Col, Container, Button} from "react-bootstrap"
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import Loader from "../loader/Loader";
-import { useState, useEffect } from "react";
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import About from './About';
+import Skills from './Skills';
+import Education from './Education';
+import Experience from './Experience';
+import Projects from './Projects';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <>
-      <Container className="pt-5 p-100">
-        <Row>
-          <Col>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px', height: '100%' }}>
-              <h1 style={{textAlign: 'center'}}>Hi I'm Sweta Sahu</h1>
-              <p>Passionate graduate student in Computer Science Engineering with a specialization in AI/ML, blending academic excellence with 3 years of professional experience in software development. Dedicated to leveraging Machine Learning, Data Analysis, and API design to create innovative solutions and drive meaningful impact in the tech landscape.</p>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                  <a href="https://www.linkedin.com/in/23-sweta-sahu/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                      <FaLinkedin size={30} />
-                  </a>
-                  <a href="https://github.com/sweta-sahu" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                      <FaGithub size={30} />
-                  </a>
-              </div>
-              <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
-                <a href="https://drive.google.com/file/d/1w8LDmNsZyy-4uiVpJWDnvGucwidvmku_/view?usp=drive_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ textDecoration: 'none', backgroundColor: 'black', color: 'white', padding: '10px 20px', borderRadius: '5px', fontSize: '16px',textAlign: 'center'}}>
-                  Resume
-                </a>
-                <a href="mailto:swetasah@buffalo.edu"
-                  style={{
-                    textDecoration: 'none',
-                    backgroundColor: 'grey',
-                    color: 'white',
-                    padding: '10px 20px',
-                    borderRadius: '5px',
-                    fontSize: '16px',
-                    textAlign: 'center',
-                  }}
-                  >
-                  Contact Me
-                  </a>
-                </div>
-              </div>
-          </Col>
-          <Col>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px' }}>
-              <Image
-                  src="/assets/developer.png"
-                  alt="Sweta Sahu"
-                  width={500}
-                  height={500}
-              />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <Header />
+      <section id="home" className="bg-light py-5">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6} className="text-center text-md-start">
+              <h1 className="display-4 mb-4">Hi, I'm <span className="text-primary">Sweta Sahu</span></h1>
+              <p className="lead mb-4">
+                Passionate graduate student in Computer Science Engineering specializing in AI/ML, with 3+ years of software development experience.
+              </p>
+              <Button variant="primary" className="me-3" href="https://drive.google.com/file/d/1w8LDmNsZyy-4uiVpJWDnvGucwidvmku_/view?usp=drive_link" target="_blank">
+                View Resume
+              </Button>
+              <Button variant="outline-dark" href="mailto:swetasah@buffalo.edu">Contact Me</Button>
+            </Col>
+            <Col md={6} className="text-center">
+              <img src="/assets/developer.png" alt="Sweta Sahu" className="img-fluid" />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section id="about" className="py-5">
+        <Container>
+          <h2 className="text-center mb-5">About Me</h2>
+          <About />
+        </Container>
+      </section>
+
+      <section id="skills" className="bg-light py-5">
+        <Container>
+          <h2 className="text-center mb-5">Skills</h2>
+          <Skills />
+        </Container>
+      </section>
+      
+      <Footer />
     </>
   );
 }
 
-export default dynamic(() => Promise.resolve(Home), { ssr: false });
+export default Home;

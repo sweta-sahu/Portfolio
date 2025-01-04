@@ -22,10 +22,10 @@ const Loader = () => {
         height: "100vh",
       }}
     >
-      <Spinner animation="border" role="status" style={{ marginBottom: "20px", color: "#333" }}>
+      <Spinner animation="border" role="status" style={{ marginBottom: "20px", color: "#007bff" }}>
         <span className="visually-hidden">Loading...</span>
       </Spinner>
-      <div style={{ fontSize: "24px", fontWeight: "bold", color: "#333" }}>
+      <div style={{ fontSize: "24px", fontWeight: "bold", color: "#007bff" }}>
         {words[currentWord]}
       </div>
     </Container>
