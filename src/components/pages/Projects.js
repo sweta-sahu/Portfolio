@@ -4,6 +4,8 @@ import { Button } from "react-bootstrap";
 import { FaPython, FaCss3, FaBootstrap, FaJs, FaChartPie } from "react-icons/fa";
 import { SiMysql, SiTensorflow, SiHtml5, SiKeras, SiFlask, SiOracle, SiScikitlearn, SiPandas} from "react-icons/si";
 import { IoIosAnalytics } from "react-icons/io";
+import Loader from "../loader/Loader";
+import { useState, useEffect } from "react";
 
 const Projects = () => {
   const projects = [
@@ -63,6 +65,17 @@ const Projects = () => {
       github: "https://github.com/sweta-sahu/Student-Marks-Management-System",
     },
   ];
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="projects-page" style={{ padding: "20px"}}>

@@ -3,6 +3,8 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css";
 import WorkIcon from "@mui/icons-material/Work";
 import dynamic from 'next/dynamic';
+import Loader from "../loader/Loader";
+import { useState, useEffect } from "react";
 
 function Experience() {
   const experiences = [
@@ -37,6 +39,17 @@ function Experience() {
       ]
     }
   ];
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="experience" style={{ padding: "20px" }}>

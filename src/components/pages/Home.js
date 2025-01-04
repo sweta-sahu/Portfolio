@@ -2,8 +2,21 @@ import {Row, Col, Container, Button} from "react-bootstrap"
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import Loader from "../loader/Loader";
+import { useState, useEffect } from "react";
 
 function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <Container className="pt-5 p-100">

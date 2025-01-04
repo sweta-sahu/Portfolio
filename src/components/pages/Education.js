@@ -3,6 +3,8 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css";
 import SchoolIcon from "@mui/icons-material/School";
 import dynamic from 'next/dynamic';
+import Loader from "../loader/Loader";
+import { useState, useEffect } from "react";
 
 function Education() {
   const educationDetails = [
@@ -19,6 +21,17 @@ function Education() {
       details: ["GPA: 9.31/10.0 (Approx. 3.72/4.0 on US scale)", "Electronics and Telecommunication engineering curriculum."]
     }
   ];
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="education" style={{ padding: "20px" }}>
