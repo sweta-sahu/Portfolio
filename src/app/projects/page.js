@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
 import { FaPython, FaCss3, FaJs, FaChartPie } from "react-icons/fa";
@@ -9,6 +9,11 @@ import { SiMysql, SiTensorflow, SiHtml5, SiKeras, SiFlask, SiScikitlearn, SiPand
 const Projects = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
+  const basePath = "https://sweta-sahu.github.io/Portfolio"
+
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
   const projects = [
     {
@@ -22,7 +27,7 @@ const Projects = () => {
           { name: "Flask", icon: <SiFlask />, color: "#000000" },
           { name: "MySQL", icon: <SiMysql />, color: "#00758F" },
         ],
-      image: "/assets/hospital-chatbot.png",
+      image: `${basePath}/assets/hospital-chatbot.png`,
       github: "https://github.com/sweta-sahu/Hospital-Recommendation-Chatbot",
     },
     {
@@ -35,7 +40,7 @@ const Projects = () => {
         { name: "Scikit-learn", icon: <SiScikitlearn />, color: "#F89939" },
         { name: "Matplotlib", icon: <FaChartPie />, color: "#11557C" },
       ],
-      image: "/assets/covid19.png",
+      image: `${basePath}/assets/covid19.png`,
       github: "https://github.com/sweta-sahu/COVID19-analysis-and-forecast",
     },
     {
@@ -47,7 +52,7 @@ const Projects = () => {
         { name: "CSS", icon: <FaCss3 />, color: "#1572B6" },
         { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
       ],
-      image: "/assets/bakery-site.png",
+      image: `${basePath}/assets/bakery-site.png`,
       github: "https://github.com/sweta-sahu/Bakery-website",
     },
     {
@@ -58,7 +63,7 @@ const Projects = () => {
         { name: "Python", icon: <FaPython />, color: "#3776AB" },
         { name: "Oracle", icon: <SiOracle />, color: "#F80000" },
       ],
-      image: "/assets/Python-projects.png",
+      image: `${basePath}/assets/Python-projects.png`,
       github: "https://github.com/sweta-sahu/Student-Marks-Management-System",
     },
   ];
@@ -177,6 +182,7 @@ const Projects = () => {
               <Button
                 href={currentProject.github}
                 target="_blank"
+                aria-label="View on GitHub"
                 style={{
                   backgroundColor: "#00b3b3",
                   border: "none",

@@ -5,6 +5,7 @@ import Skills from './skills/page'
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Loader from './components/loader/Loader';
 import {useEffect, useState} from 'react';
+import Image from 'next/image';
 
 function Home() {
 
@@ -43,6 +44,7 @@ function Home() {
                 className="me-3"
                 href="https://drive.google.com/file/d/1w8LDmNsZyy-4uiVpJWDnvGucwidvmku_/view?usp=drive_link"
                 target="_blank"
+                aria-label="View Resume"
                 style={{
                   color: '#002855',
                   backgroundColor: '#00b3b3',
@@ -51,15 +53,15 @@ function Home() {
               >
                 View Resume
               </Button>
-              <Button variant="outline-light" href="mailto:swetasah@buffalo.edu">
+              <Button variant="outline-light" href="mailto:swetasah@buffalo.edu" aria-label="Contact Me">
                 Contact Me
               </Button>
             </Col>
             <Col md={6} className="text-center">
-              <img
-                src="/assets/developer.png"
+              <Image
+                src="https://sweta-sahu.github.io/Portfolio/assets/developer.png"
                 alt="Sweta Sahu"
-                className="img-fluid rounded shadow"
+                className="rounded shadow"
                 style={{
                   border: '2px solid #00b3b3',
                   maxWidth: '80%',

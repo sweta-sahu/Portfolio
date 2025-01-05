@@ -1,9 +1,17 @@
+'use client'
+
 import Container from 'react-bootstrap/Container';
 import {Nav, Navbar, NavLink, NavbarBrand, NavbarToggle, NavbarCollapse} from 'react-bootstrap';
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect } from 'react';
 
 function Header() {
+
+  useEffect(() => {
+      import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
+
   return (
     <Navbar
       expand="lg"
@@ -15,8 +23,8 @@ function Header() {
       }}
     >
       <Container>
+      <Link href="/" passHref style={{textDecoration: 'none'}}>
         <NavbarBrand
-          href="/"
           className="fs-3"
           style={{
             color: '#00b3b3',
@@ -26,6 +34,7 @@ function Header() {
         >
           Sweta Sahu
         </NavbarBrand>
+      </Link>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
           <Nav className="ms-auto">

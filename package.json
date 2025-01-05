@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && node -e \"require('fs').writeFileSync('./out/.nojekyll', '')\" && gh-pages -d out"
+    "deploy": "npm run build && echo '' > out/.nojekyll && gh-pages -d out  --dotfiles"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
