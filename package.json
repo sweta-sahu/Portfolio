@@ -1,7 +1,7 @@
 {
   "name": "porfolio",
   "version": "0.1.0",
-  "homepage": "https://sweta-sahu.github.io/Porfolio",
+  "homepage": "https://sweta-sahu.github.io/Portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
