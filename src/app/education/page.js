@@ -1,49 +1,29 @@
+'use client'
+
 import React from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import WorkIcon from "@mui/icons-material/Work";
-import dynamic from "next/dynamic";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import SchoolIcon from "@mui/icons-material/School";
 
-function Experience() {
-  const experiences = [
+function Education() {
+  const educationDetails = [
     {
-      date: "June 2023 - July 2024",
-      title: "System Engineer",
-      company: "Tata Consultancy Services",
-      details: [
-        "Led the backend team in developing and integrating 3 microservices, creating REST APIs using Spring Boot.",
-        "Containerized applications with Docker and deployed them on AWS for an Energy Platform.",
-        "Migrated the database from PostgreSQL to MongoDB, using Python (Pandas) for data cleaning and processing.",
-      ],
+      date: "August 2024 - December 2025 (Expected)",
+      title: "Master of Science in Computer Science and Engineering",
+      institution: "University at Buffalo, The State University of New York",
+      details: ["Specialization in AI/ML.", "GPA: 3.83/4.0"],
     },
     {
-      date: "June 2022 - May 2023",
-      title: "Assistant System Engineer",
-      company: "Tata Consultancy Services",
-      details: [
-        "Designed and implemented a user onboarding microservice using Spring Boot, PostgreSQL, and Keycloak.",
-        "Contributed to frontend development using ReactJS, creating various components for a Carbon Platform.",
-        "Automated data collection and cleansing with Pandas and web scraping, and implemented a sentence embedding model (LaBSE) for data clustering with K-means.",
-      ],
-    },
-    {
-      date: "June 2021 - May 2022",
-      title: "Assistant System Engineer - Trainee",
-      company: "Tata Consultancy Services",
-      details: [
-        "Developed RESTful web services using Spring Boot and created database tables using PL/SQL in a PostgreSQL environment.",
-        "Secured APIs with Keycloak and managed audit trails using Hibernate Envers.",
-        "Containerized microservices with Docker for streamlined deployment across different environments.",
-      ],
+      date: "August 2017 - June 2021",
+      title: "Bachelor of Engineering in Electronics and Telecommunication",
+      institution: "Ramrao Adik Institute of Technology, Mumbai University",
+      details: ["GPA: 9.31/10.0 (Approx. 3.72/4.0 on US scale)", "Electronics and Telecommunication engineering curriculum."],
     },
   ];
 
   return (
     <>
-      <Header />
-      <div className="experience py-5" style={{ backgroundColor: "#f8f9fa", padding: "60px 0" }}>
+      <div className="education py-5" style={{ backgroundColor: "#f8f9fa", padding: "60px 0" }}>
         <div className="container">
           <h1
             className="text-center mb-5"
@@ -54,16 +34,16 @@ function Experience() {
               textTransform: "uppercase",
             }}
           >
-            Experience
+            Education
           </h1>
           <VerticalTimeline lineColor="#00b3b3">
-            {experiences.map((exp, index) => (
+            {educationDetails.map((edu, index) => (
               <VerticalTimelineElement
                 key={index}
-                className="vertical-timeline-element--work"
-                date={exp.date}
+                className="vertical-timeline-element--education"
+                date={edu.date}
                 iconStyle={{ background: "#00b3b3", color: "#fff" }}
-                icon={<WorkIcon />}
+                icon={<SchoolIcon />}
                 contentStyle={{
                   background: "#fff",
                   color: "#333",
@@ -81,7 +61,7 @@ function Experience() {
                     fontWeight: "bold",
                   }}
                 >
-                  {exp.title}
+                  {edu.title}
                 </h3>
                 <h4
                   className="vertical-timeline-element-subtitle"
@@ -92,10 +72,10 @@ function Experience() {
                     fontStyle: "italic",
                   }}
                 >
-                  {exp.company}
+                  {edu.institution}
                 </h4>
                 <ul style={{ paddingLeft: "20px", margin: "0" }}>
-                  {exp.details.map((detail, i) => (
+                  {edu.details.map((detail, i) => (
                     <li
                       key={i}
                       style={{
@@ -113,9 +93,8 @@ function Experience() {
           </VerticalTimeline>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
 
-export default dynamic(() => Promise.resolve(Experience), { ssr: false });
+export default Education;

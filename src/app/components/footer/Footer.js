@@ -1,3 +1,5 @@
+'use client'
+
 import { Container, Row, Col } from "react-bootstrap";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 

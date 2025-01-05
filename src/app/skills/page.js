@@ -1,4 +1,5 @@
-import dynamic from 'next/dynamic';
+'use client'
+
 import { FaPython, FaJava, FaJs, FaHtml5, FaCss3, FaDocker, FaGitAlt, FaAws, FaLaptopCode, FaChartPie, FaBrain, FaDatabase, FaInfinity } from 'react-icons/fa';
 import { SiFlask, SiSpringboot, SiFastapi, SiApachehadoop, SiApachespark, SiPostgresql, SiMongodb, SiReact, SiTensorflow, SiPytorch, SiOpencv, SiScikitlearn, SiNumpy, SiPandas, SiMysql, SiKeras } from 'react-icons/si';
 import { IoIosAnalytics } from "react-icons/io";
@@ -112,4 +113,4 @@ function Skills() {
   );
 }
 
-export default dynamic(() => Promise.resolve(Skills), { ssr: false });
+export default Skills;

@@ -1,10 +1,10 @@
+'use client'
+
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
 import { FaPython, FaCss3, FaJs, FaChartPie } from "react-icons/fa";
 import { SiMysql, SiTensorflow, SiHtml5, SiKeras, SiFlask, SiScikitlearn, SiPandas, SiOracle } from "react-icons/si";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
 
 const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -75,7 +75,6 @@ const Projects = () => {
 
   return (
     <>
-      <Header />
       <div className="projects-page py-5" style={{ backgroundColor: "#f8f9fa" }}>
         <div className="container">
           <h1
@@ -190,8 +189,6 @@ const Projects = () => {
           </Modal>
         )}
       </div>
-
-      <Footer />
     </>
   );
 };
