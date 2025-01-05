@@ -3,8 +3,6 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css";
 import SchoolIcon from "@mui/icons-material/School";
 import dynamic from "next/dynamic";
-import Loader from "../loader/Loader";
-import { useState, useEffect } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
@@ -24,40 +22,29 @@ function Education() {
     },
   ];
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <>
       <Header />
-      <div className="education py-5" style={{ backgroundColor: "#f8f9fa" }}>
+      <div className="education py-5" style={{ backgroundColor: "#f8f9fa", padding: "60px 0" }}>
         <div className="container">
           <h1
             className="text-center mb-5"
             style={{
               fontSize: "2.5rem",
               fontWeight: "bold",
-              color: "#333",
+              color: "#002855",
               textTransform: "uppercase",
             }}
           >
             Education
           </h1>
-          <VerticalTimeline lineColor="#007bff">
+          <VerticalTimeline lineColor="#00b3b3">
             {educationDetails.map((edu, index) => (
               <VerticalTimelineElement
                 key={index}
                 className="vertical-timeline-element--education"
                 date={edu.date}
-                iconStyle={{ background: "#007bff", color: "#fff" }}
+                iconStyle={{ background: "#00b3b3", color: "#fff" }}
                 icon={<SchoolIcon />}
                 contentStyle={{
                   background: "#fff",
@@ -70,7 +57,7 @@ function Education() {
                 <h3
                   className="vertical-timeline-element-title"
                   style={{
-                    color: "#000",
+                    color: "#002855",
                     marginBottom: "10px",
                     fontSize: "1.25rem",
                     fontWeight: "bold",
@@ -108,7 +95,6 @@ function Education() {
           </VerticalTimeline>
         </div>
       </div>
-
       <Footer />
     </>
   );
