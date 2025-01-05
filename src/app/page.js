@@ -1,14 +1,14 @@
 'use client'
 
 import About from './about/page';
-import Skills from './skills/page'
+import Skills from './skills/page';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Loader from './components/loader/Loader';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 function Home() {
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -39,6 +39,35 @@ function Home() {
               <p className="lead mb-4">
                 Passionate graduate student in Computer Science Engineering specializing in AI/ML, with 3+ years of software development experience.
               </p>
+              <div className="d-flex align-items-center mb-3">
+                <a
+                  href="https://github.com/sweta-sahu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  style={{
+                    color: '#fff',
+                    fontSize: '1.5rem',
+                    marginRight: '15px',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <FaGithub style={{ color: '#fff', cursor: 'pointer' }} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/23-sweta-sahu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  style={{
+                    color: '#fff',
+                    fontSize: '1.5rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <FaLinkedin style={{ color: '#fff', cursor: 'pointer' }} />
+                </a>
+              </div>
               <Button
                 variant="light"
                 className="me-3"
@@ -53,7 +82,11 @@ function Home() {
               >
                 View Resume
               </Button>
-              <Button variant="outline-light" href="mailto:swetasah@buffalo.edu" aria-label="Contact Me">
+              <Button
+                variant="outline-light"
+                href="mailto:swetasah@buffalo.edu"
+                aria-label="Contact Me"
+              >
                 Contact Me
               </Button>
             </Col>
