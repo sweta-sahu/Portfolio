@@ -1,13 +1,11 @@
-'use client'
+'use client';
 
-import About from './about/page';
-import Skills from './skills/page'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 import Loader from './components/loader/Loader';
-import {useEffect, useState} from 'react';
+import About from './about/page';
+import Skills from './skills/page';
 
-function Home() {
-
+export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,69 +19,62 @@ function Home() {
 
   return (
     <>
-      <section
-        id="home"
-        style={{
-          background: 'linear-gradient(180deg, #001f3f, #002855)',
-          color: '#fff',
-          padding: '80px 0',
-        }}
-      >
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6} className="text-center text-md-start">
-              <h1 className="display-4 mb-4">
-                Hi, I'm <span style={{ color: '#00b3b3' }}>Sweta Sahu</span>
+      <section id="home" className="bg-background text-foreground py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+                Hi, I'm <span className="text-primary">Sweta Sahu</span>
               </h1>
-              <p className="lead mb-4">
-                Passionate graduate student in Computer Science Engineering specializing in AI/ML, with 3+ years of software development experience.
+              <p className="text-lg mb-6">
+                Passionate graduate student in Computer Science Engineering specializing in AI/ML,
+                with 3+ years of software development experience.
               </p>
-              <Button
-                variant="light"
-                className="me-3"
-                href="https://drive.google.com/file/d/1w8LDmNsZyy-4uiVpJWDnvGucwidvmku_/view?usp=drive_link"
-                target="_blank"
-                style={{
-                  color: '#002855',
-                  backgroundColor: '#00b3b3',
-                  borderColor: '#00b3b3',
-                }}
-              >
-                View Resume
-              </Button>
-              <Button variant="outline-light" href="mailto:swetasah@buffalo.edu">
-                Contact Me
-              </Button>
-            </Col>
-            <Col md={6} className="text-center">
+
+              <div className="flex justify-center lg:justify-start gap-4">
+                <a
+                  href="https://drive.google.com/file/d/1w8LDmNsZyy-4uiVpJWDnvGucwidvmku_/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  View Resume
+                </a>
+                <a
+                  href="mailto:swetasah@buffalo.edu"
+                  className="inline-block border border-primary text-primary font-medium py-2 px-4 rounded-2xl hover:bg-primary hover:text-background transition"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </div>
+
+            <div className="flex-1 text-center">
               <img
                 src="/assets/developer.png"
                 alt="Sweta Sahu"
-                className="img-fluid rounded shadow"
-                style={{
-                  border: '2px solid #00b3b3',
-                  maxWidth: '80%',
-                  height: 'auto',
-                }}
+                className="mx-auto w-4/5 max-w-sm rounded-lg shadow-lg border-2 border-primary"
               />
-            </Col>
-          </Row>
-        </Container>
+            </div>
+
+          </div>
+        </div>
       </section>
 
-      <section id="about" style={{ backgroundColor: '#f4f4f4', padding: '80px 0' }}>
-        <Container>
+      {/* About Section */}
+      <section id="about" className="py-5">
+        <div className="container mx-auto px-4">
           <About />
-        </Container>
+        </div>
       </section>
 
-      <section id="skills" style={{ backgroundColor: '#fff', padding: '80px 0' }}>
-        <Container>
+      {/* Skills Section */}
+      <section id="skills" className="py-5">
+        <div className="container mx-auto px-4">
           <Skills />
-        </Container>
+        </div>
       </section>
     </>
   );
 }
-
-export default Home;

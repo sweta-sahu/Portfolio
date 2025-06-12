@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.dark {
+}
+
+/* Base background & text */
+body {
+  @apply bg-background text-foreground;
+  font-variant-numeric: oldstyle-nums;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  @apply text-primary hover:text-primary-light transition;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-block bg-primary text-background font-medium py-2 px-4 rounded-2xl shadow-lg transition;
+}
+.btn:hover {
+  @apply bg-primary-light;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  @apply text-foreground;
+  font-weight: 400;
+}
