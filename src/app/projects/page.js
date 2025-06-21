@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, Button } from "react-bootstrap";
-import { FaPython, FaCss3, FaJs, FaChartPie } from "react-icons/fa";
-import { SiMysql, SiTensorflow, SiHtml5, SiKeras, SiFlask, SiScikitlearn, SiPandas, SiOracle } from "react-icons/si";
+// import React, { useState, useEffect } from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import { Modal, Button } from "react-bootstrap";
+// import { FaPython, FaCss3, FaJs, FaChartPie } from "react-icons/fa";
+// import { SiMysql, SiTensorflow, SiHtml5, SiKeras, SiFlask, SiScikitlearn, SiPandas, SiOracle } from "react-icons/si";
 
 // const Projects = () => {
 //   const [showModal, setShowModal] = useState(false);
