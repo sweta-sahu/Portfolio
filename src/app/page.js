@@ -8,6 +8,9 @@ import Skills from './skills/page';
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
+  const basePath = "https://sweta-sahu.github.io/Portfolio"
+  const profileImg = `${basePath}/assets/developer.png`;
+
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
@@ -52,7 +55,7 @@ export default function Home() {
 
             <div className="flex-1 text-center">
               <img
-                src="/assets/developer.png"
+                src={profileImg}
                 alt="Sweta Sahu"
                 className="mx-auto w-4/5 max-w-sm rounded-lg shadow-lg border-2 border-primary"
               />
