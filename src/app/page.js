@@ -46,7 +46,7 @@ export default function Home() {
                 </a>
                 <a
                   href="mailto:swetasah@buffalo.edu"
-                  className="inline-block border border-primary text-primary font-medium py-2 px-4 rounded-2xl hover:bg-primary hover:text-background transition"
+                  className="inline-block border border-primary text-primary font-medium py-2 px-4 rounded-2xl hover:bg-primary hover:text-background transition no-underline"
                 >
                   Contact Me
                 </a>

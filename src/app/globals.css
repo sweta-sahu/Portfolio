@@ -12,14 +12,11 @@ body {
   line-height: 1.6;
 }
 
-/* Links */
-a {
-  @apply text-primary hover:text-primary-light transition;
-}
+/* Links - THIS SECTION HAS BEEN REMOVED */
 
 /* Buttons */
 .btn {
-  @apply inline-block bg-primary text-background font-medium py-2 px-4 rounded-2xl shadow-lg transition;
+  @apply inline-block bg-primary text-background font-medium py-2 px-4 rounded-2xl shadow-lg transition no-underline;
 }
 .btn:hover {
   @apply bg-primary-light;

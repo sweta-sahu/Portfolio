@@ -20,7 +20,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-background text-foreground shadow-md border-b-4 border-primary">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Brand */}
-        <Link href="/" className="text-primary text-2xl font-bold">
+        <Link href="/" 
+          className="text-primary text-2xl font-bold no-underline hover:text-primary-light transition"
+        >
           Sweta Sahu
         </Link>
 
@@ -44,7 +46,7 @@ export default function Header() {
               <li key={href} className="border-b border-primary lg:border-none">
                 <Link
                   href={href}
-                  className="block px-4 py-3 text-foreground hover:text-primary transition"
+                  className="block px-4 py-3 text-primary no-underline hover:underline transition"
                   onClick={() => setIsOpen(false)}
                 >
                   {label}

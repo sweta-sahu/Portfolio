@@ -1,11 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/**/*.{js,ts,jsx,tsx,css}', 
-  ],
+  // This single, broader path is more reliable and will find all your component files.
+  content: ['./src/**/*.{js,ts,jsx,tsx,css}'],
   theme: {
     extend: {
       colors: {
@@ -30,6 +27,15 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
         serif: ['Merriweather', 'serif'],
+      },
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
     },
   },
