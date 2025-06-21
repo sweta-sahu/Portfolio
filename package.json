@@ -4,12 +4,11 @@
   "homepage": "https://sweta-sahu.github.io/Portfolio",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run build && echo '' > out/.nojekyll && gh-pages -d out  --dotfiles"
-  },
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
