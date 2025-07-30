@@ -8,7 +8,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="lg:w-1/3 w-full flex-shrink-0">
              <img 
-               src="/assets/sweta-sahu.jpg"
+               src="https://sweta-sahu.github.io/Portfolio/assets/sweta-sahu.jpg"
                alt="Sweta Sahu" 
                className="w-64 h-64 rounded-full object-cover mx-auto shadow-2xl border-4 border-gray-700"
                onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x400/1a202c/7dd3fc?text=Sweta'; }}
