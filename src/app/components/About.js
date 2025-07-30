@@ -1,13 +1,18 @@
 'use client'; 
 
 const About = () => {
+
+  const basePath = "https://sweta-sahu.github.io/Portfolio"
+
+  const porfileImage = `${basePath}/assets/sweta-sahu.jpg`;
+
   return (
     <section id="about" className="py-24 bg-gray-800/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="lg:w-1/3 w-full flex-shrink-0">
              <img 
-               src="/assets/sweta-sahu.jpg" 
+               src={porfileImage} 
                alt="Sweta Sahu" 
                className="w-64 h-64 rounded-full object-cover mx-auto shadow-2xl border-4 border-gray-700"
                onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x400/1a202c/7dd3fc?text=Sweta'; }}
