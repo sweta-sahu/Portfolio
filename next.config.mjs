@@ -4,7 +4,6 @@ const isProd = true;
 const nextConfig = {
   output: 'export',
   basePath: isProd ? '/Portfolio' : '',
-  assetPrefix: isProd ? '/Portfolio/' : '',
   reactStrictMode: true,
   images: {
     unoptimized: true,
