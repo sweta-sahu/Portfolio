@@ -1,80 +1,40 @@
-'use client';
+import Head from 'next/head';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import AnimatedSection from './components/AnimatedSection';
 
-import { useEffect, useState } from 'react';
-import Loader from './components/loader/Loader';
-import About from './about/page';
-import Skills from './skills/page';
-
-export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
+const Home = () => {
   return (
-    <>
-      <section id="home" className="bg-background text-foreground py-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+    <div className="bg-gray-900 text-white min-h-screen font-sans">
+      <Head>
+        <title>Sweta Sahu - Software Engineer</title>
+        <meta name="description" content="Portfolio of Sweta Sahu, a skilled Software Engineer specializing in cloud-native solutions, MLOps, and full-stack development." />
+        <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+      </Head>
+      
+      <Header />
+      
+      <main>
+        <Hero />
+        <AnimatedSection><About /></AnimatedSection>
+        <AnimatedSection><Experience /></AnimatedSection>
+        <AnimatedSection><Projects /></AnimatedSection>
+        <AnimatedSection><Skills /></AnimatedSection>
+        <AnimatedSection><Education /></AnimatedSection>
+        <AnimatedSection><Contact /></AnimatedSection>
+      </main>
 
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-5xl sm:text-6xl font-bold mb-4">
-                Hi, I'm <span className="text-primary">Sweta Sahu</span>
-              </h1>
-              <p className="text-lg mb-6">
-                Passionate graduate student in Computer Science Engineering specializing in AI/ML,
-                with 3+ years of software development experience.
-              </p>
-
-              <div className="flex justify-center lg:justify-start gap-4">
-                <a
-                  href="https://drive.google.com/file/d/1w8LDmNsZyy-4uiVpJWDnvGucwidvmku_/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn"
-                >
-                  View Resume
-                </a>
-                <a
-                  href="mailto:swetasah@buffalo.edu"
-                  className="inline-block border border-primary text-primary font-medium py-2 px-4 rounded-2xl hover:bg-primary hover:text-background transition"
-                >
-                  Contact Me
-                </a>
-              </div>
-            </div>
-
-            <div className="flex-1 text-center">
-              <img
-                src="/assets/developer.png"
-                alt="Sweta Sahu"
-                className="mx-auto w-4/5 max-w-sm rounded-lg shadow-lg border-2 border-primary"
-              />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-5">
-        <div className="container mx-auto px-4">
-          <About />
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-5">
-        <div className="container mx-auto px-4">
-          <Skills />
-        </div>
-      </section>
-    </>
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Home;

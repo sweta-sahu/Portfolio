@@ -2,31 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-html.dark {
+@layer utilities {
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+  }
 }
 
-/* Base background & text */
 body {
-  @apply bg-background text-foreground;
-  font-variant-numeric: oldstyle-nums;
-  line-height: 1.6;
-}
-
-/* Links */
-a {
-  @apply text-primary hover:text-primary-light transition;
-}
-
-/* Buttons */
-.btn {
-  @apply inline-block bg-primary text-background font-medium py-2 px-4 rounded-2xl shadow-lg transition;
-}
-.btn:hover {
-  @apply bg-primary-light;
-}
-
-/* Headings */
-h1, h2, h3, h4 {
-  @apply text-foreground;
-  font-weight: 400;
+    background-color: #0a192f;
+    color: #e6f1ff;
 }
