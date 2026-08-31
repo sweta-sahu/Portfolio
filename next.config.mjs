@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async rewrites() {
-      return [
-        {
-          source: '/:path*',
-          destination: '/',
-        },
-      ];
-    },
-    reactStrictMode: true,
-  };
-  
-  export default nextConfig;  
+  output: 'export',
+  basePath: '/Portfolio',
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+};
+
+export default nextConfig;
