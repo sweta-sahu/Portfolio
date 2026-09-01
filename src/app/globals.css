@@ -1,27 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --a1: oklch(75% 0.17 195);
+  --a2: oklch(72% 0.20 320);
+  --glow: color-mix(in oklch, var(--a1) 35%, transparent);
+}
 
-@layer utilities {
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient-animation 5s ease infinite;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0a192f;
-    color: #e6f1ff;
+  margin: 0;
+  background: oklch(14% 0.014 260);
+  color: oklch(92% 0.006 260);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: oklch(78% 0.01 260);
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -40px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, 30px); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 oklch(78% 0.19 145 / 0.5); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 6px oklch(78% 0.19 145 / 0); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* style-hover / style-focus equivalents from the design template */
+
+.hv-accent:hover {
+  color: var(--a1);
+}
+
+.hv-outline:hover {
+  border-color: var(--a1);
+  color: var(--a1);
+}
+
+.hv-card:hover {
+  border-color: var(--a1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px oklch(0% 0 0 / 0.35);
+}
+
+.hv-panel:hover {
+  border-color: var(--a1);
+  box-shadow: 0 12px 30px oklch(0% 0 0 / 0.35);
+}
+
+.hv-panel-lg:hover {
+  border-color: var(--a1);
+  box-shadow: 0 16px 40px oklch(0% 0 0 / 0.4);
+}
+
+.hv-a2:hover {
+  color: var(--a2);
+}
+
+.fc-accent:focus {
+  border-color: var(--a1);
+  outline: none;
 }

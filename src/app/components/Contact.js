@@ -1,68 +1,144 @@
-'use client';
-import { useState } from 'react';
+import { a1, a2, glow, mono, display, NAV_HEIGHT } from '../theme';
+import { contact } from '../data/portfolio';
+import { LinkedInIcon, GitHubIcon } from './icons';
 
-const Contact = () => {
-    const [status, setStatus] = useState('');
+const labelStyle = { fontFamily: mono, fontSize: 12, color: 'oklch(65% 0.01 260)' };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
-        const form = e.target;
-        const data = new FormData(form);
+const contactLinkStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: 9,
+  color: 'oklch(85% 0.006 260)',
+};
 
-        try {
-            const response = await fetch("https://formspree.io/f/mrblknae", {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+const fieldStyle = {
+  width: '100%',
+  marginTop: 6,
+  padding: '12px 14px',
+  borderRadius: 8,
+  border: '1px solid oklch(30% 0.02 260)',
+  background: 'oklch(20% 0.018 260)',
+  color: 'white',
+  fontSize: 14,
+  fontFamily: 'inherit',
+};
 
-            if (response.ok) {
-                setStatus('Thanks for your message!');
-                form.reset();
-            } else {
-                const responseData = await response.json();
-                if (responseData.errors) {
-                    setStatus(responseData.errors.map(error => error.message).join(", "));
-                } else {
-                    setStatus('Oops! There was a problem submitting your form');
-                }
-            }
-        } catch (error) {
-            setStatus('Oops! There was a problem submitting your form');
-        }
-    };
+export default function Contact() {
+  return (
+    <div
+      id="contact"
+      style={{
+        scrollMarginTop: NAV_HEIGHT,
+        maxWidth: 1140,
+        margin: '0 auto',
+        padding: '72px 48px 100px',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1.3fr',
+        gap: 64,
+      }}
+    >
+      <div>
+        <div style={{ fontFamily: mono, fontSize: 12.5, color: a1, marginBottom: 10 }}>
+          // 07 — contact
+        </div>
+        <h2 style={{ fontFamily: display, fontSize: 30, fontWeight: 600, margin: '0 0 16px' }}>
+          Let&apos;s talk
+        </h2>
+        <p
+          style={{
+            fontSize: 15,
+            lineHeight: 1.6,
+            color: 'oklch(68% 0.01 260)',
+            margin: '0 0 28px',
+          }}
+        >
+          Open to SWE, ML/AI, and agentic AI engineer roles — and open to relocation.
+        </p>
 
-    return (
-        <section id="contact" className="py-24 text-center">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 className="text-4xl font-bold mb-4">Contact Me</h3>
-                <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
-                
-                <form onSubmit={handleSubmit} className="max-w-xl mx-auto text-left">
-                    <div className="mb-4">
-                        <label htmlFor="name" className="block text-gray-300 mb-2">Name</label>
-                        <input type="text" id="name" name="name" required className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-gray-300 mb-2">Email</label>
-                        <input type="email" id="email" name="email" required className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" />
-                    </div>
-                    <div className="mb-6">
-                        <label htmlFor="message" className="block text-gray-300 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" required className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
-                    </div>
-                    <div className="text-center">
-                         <button type="submit" className="bg-cyan-500 text-white font-bold py-3 px-8 rounded-full hover:bg-cyan-600 transition-transform duration-300 transform hover:scale-105 shadow-lg">
-                           Send Message
-                         </button>
-                    </div>
-                    {status && <p className="text-center mt-4 text-gray-400">{status}</p>}
-                </form>
-            </div>
-        </section>
-    );
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 16,
+            fontFamily: mono,
+            fontSize: 13.5,
+          }}
+        >
+          <a href={`mailto:${contact.email}`} style={{ color: 'oklch(85% 0.006 260)' }}>
+            {contact.email}
+          </a>
+          <div style={{ color: 'oklch(85% 0.006 260)' }}>{contact.phone}</div>
+          <div style={{ color: 'oklch(85% 0.006 260)' }}>{contact.location}</div>
+          <a href={contact.linkedin} target="_blank" style={contactLinkStyle}>
+            <LinkedInIcon size={15} />
+            {contact.linkedinLabel}
+          </a>
+          <a href={contact.github} target="_blank" style={contactLinkStyle}>
+            <GitHubIcon size={15} />
+            {contact.githubLabel}
+          </a>
+        </div>
+      </div>
+
+      <form
+        action={contact.formspreeAction}
+        method="POST"
+        style={{
+          background: 'oklch(18% 0.016 260)',
+          border: '1px solid oklch(28% 0.02 260)',
+          borderRadius: 16,
+          padding: 30,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 16,
+        }}
+      >
+        <div style={{ fontFamily: mono, fontSize: 12, color: 'oklch(55% 0.01 260)' }}>
+          $ contact --new-message
+        </div>
+
+        <div>
+          <label style={labelStyle}>name</label>
+          <input name="name" type="text" className="fc-accent" style={fieldStyle} />
+        </div>
+
+        <div>
+          <label style={labelStyle}>email</label>
+          <input name="email" type="email" className="fc-accent" style={fieldStyle} />
+        </div>
+
+        <div>
+          <label style={labelStyle}>message</label>
+          <textarea
+            name="message"
+            rows={5}
+            className="fc-accent"
+            style={{ ...fieldStyle, resize: 'vertical' }}
+          />
+        </div>
+
+        <button
+          type="submit"
+          style={{
+            alignSelf: 'flex-start',
+            fontSize: 14,
+            fontWeight: 600,
+            padding: '12px 28px',
+            borderRadius: 10,
+            background: `linear-gradient(135deg,${a1},${a2})`,
+            color: 'oklch(14% 0.02 260)',
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: `0 0 24px ${glow}`,
+          }}
+        >
+          Send message
+        </button>
+
+        <div style={{ fontFamily: mono, fontSize: 11.5, color: 'oklch(50% 0.01 260)' }}>
+          // replace YOUR_FORM_ID with your Formspree ID to activate
+        </div>
+      </form>
+    </div>
+  );
 }
-export default Contact;
