@@ -11,25 +11,9 @@ export default function Skills() {
         Toolbox
       </h2>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))',
-          gap: 18,
-        }}
-      >
+      <div>
         {skillGroups.map((group) => (
-          <div
-            key={group.name}
-            className="hv-card"
-            style={{
-              background: 'oklch(18% 0.016 260)',
-              border: '1px solid oklch(28% 0.02 260)',
-              borderRadius: 14,
-              padding: 22,
-              transition: 'transform .2s, box-shadow .2s',
-            }}
-          >
+          <div key={group.name} className="skill-row">
             <div
               style={{
                 fontFamily: mono,
@@ -38,11 +22,13 @@ export default function Skills() {
                 color: a1,
                 textTransform: 'uppercase',
                 letterSpacing: '0.04em',
-                marginBottom: 14,
+                lineHeight: 1.5,
+                paddingTop: 7,
               }}
             >
               {group.name}
             </div>
+
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {group.items.map((skill) => (
                 <span
@@ -50,8 +36,8 @@ export default function Skills() {
                   style={{
                     fontFamily: mono,
                     fontSize: 12,
-                    background: 'oklch(22% 0.018 260)',
-                    border: '1px solid oklch(30% 0.02 260)',
+                    background: 'oklch(20% 0.018 260)',
+                    border: '1px solid oklch(29% 0.02 260)',
                     padding: '6px 11px',
                     borderRadius: 7,
                     color: 'oklch(85% 0.006 260)',

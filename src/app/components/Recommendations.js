@@ -20,7 +20,7 @@ export default function Recommendations() {
   return (
     <>
       <div style={{ fontFamily: mono, fontSize: 12.5, color: a1, marginBottom: 10 }}>
-        // 06 — recommendations
+        // 07 — recommendations
       </div>
       <h2 style={{ fontFamily: display, fontSize: 30, fontWeight: 600, margin: '0 0 28px' }}>
         Recommendations
@@ -62,6 +62,8 @@ export default function Recommendations() {
               >
                 &quot;
               </div>
+              {/* Collapsed shows only the opening paragraph, clamped — line-clamp
+                  is unreliable across sibling blocks, so we cut by paragraph. */}
               <div
                 style={{
                   fontSize: 13.5,
@@ -71,7 +73,13 @@ export default function Recommendations() {
                   ...(expanded ? {} : CLAMP),
                 }}
               >
-                {r.quote}
+                {expanded
+                  ? r.quote.map((para, p) => (
+                      <p key={p} style={{ margin: p === 0 ? 0 : '12px 0 0' }}>
+                        {para}
+                      </p>
+                    ))
+                  : r.quote[0]}
               </div>
               <div
                 onClick={() => toggleRec(i)}

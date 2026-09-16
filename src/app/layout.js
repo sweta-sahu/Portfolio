@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: 'Sweta Sahu — Software Engineer',
   description:
-    'Software engineer with 3+ years shipping production backend, ML and agentic AI systems. Open to SWE, SDE, ML/AI and Agentic AI Engineer roles.',
+    'Software engineer with 4+ years shipping production backend, ML and agentic AI systems — LangGraph multi-agent orchestration, RAG pipelines, AWS infrastructure. Open to SWE, SDE, ML/AI and Agentic AI Engineer roles.',
 };
 
 export default function RootLayout({ children }) {

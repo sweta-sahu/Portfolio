@@ -1,4 +1,4 @@
-import { a1, mono, display } from '../theme';
+import { a1, a2, mono, display } from '../theme';
 import { projects } from '../data/portfolio';
 
 export default function Projects() {
@@ -78,6 +78,28 @@ export default function Projects() {
                 {proj.subtitle}
               </div>
 
+              {/* Where the project came from — hackathon, demo day, coursework.
+                  Accent-2 keeps it distinct from the a1 stack tags below. */}
+              {proj.context && (
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    marginTop: 10,
+                    fontFamily: mono,
+                    fontSize: 11,
+                    color: a2,
+                    background: 'oklch(21% 0.018 260)',
+                    border: '1px solid oklch(32% 0.02 260)',
+                    padding: '4px 10px',
+                    borderRadius: 100,
+                  }}
+                >
+                  {proj.context}
+                </div>
+              )}
+
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 12 }}>
                 {proj.stackTags.map((t) => (
                   <span
@@ -116,23 +138,33 @@ export default function Projects() {
                 ))}
               </ul>
 
-              <a
-                href={proj.repoUrl}
-                target="_blank"
-                className="hv-a2"
+              <div
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 18,
                   marginTop: 16,
                   fontFamily: mono,
                   fontSize: 12.5,
                   fontWeight: 600,
-                  color: a1,
                 }}
               >
-                gh: view repo →
-              </a>
+                {proj.repoUrl ? (
+                  <a href={proj.repoUrl} target="_blank" className="hv-a2" style={{ color: a1 }}>
+                    gh: view repo →
+                  </a>
+                ) : (
+                  <span style={{ fontWeight: 400, color: 'oklch(55% 0.01 260)' }}>
+                    // coursework — repo not public
+                  </span>
+                )}
+
+                {proj.devpostUrl && (
+                  <a href={proj.devpostUrl} target="_blank" className="hv-a2" style={{ color: a1 }}>
+                    devpost: submission →
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

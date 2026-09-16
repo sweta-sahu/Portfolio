@@ -65,7 +65,7 @@ export default function Nav() {
 
       <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
         <a
-          href={`${BASE}/assets/resume.pdf`}
+          href={`${BASE}/assets/Sweta_Sahu.pdf`}
           target="_blank"
           style={{
             fontFamily: mono,

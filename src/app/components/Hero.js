@@ -125,15 +125,16 @@ export default function Hero() {
               margin: '0 0 32px',
             }}
           >
-            Software engineer with 3+ years shipping production backend, ML and agentic AI systems —
-            from Spring Boot microservices at TCS to AI agent orchestration for research platforms at
-            SUNY Buffalo. Fresh off an M.S. in Computer Science (AI/ML), hunting for SWE, SDE, ML/AI
-            and Agentic AI Engineer roles.
+            Software engineer with 4+ years shipping production backend, ML and agentic AI systems —
+            from Spring Boot and Kafka microservices at TCS to multi-agent LangGraph orchestration
+            and RAG pipelines for research platforms at SUNY Buffalo. M.S. in Computer Science
+            (AI/ML) from University at Buffalo, hunting for SWE, SDE, ML/AI and Agentic AI Engineer
+            roles.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
             <a
-              href={`${BASE}/assets/resume.pdf`}
+              href={`${BASE}/assets/Sweta_Sahu.pdf`}
               target="_blank"
               style={{
                 fontSize: 14,

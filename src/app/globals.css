@@ -75,6 +75,63 @@ a:hover {
   box-shadow: 0 16px 40px oklch(0% 0 0 / 0.4);
 }
 
+/* Skills: label column beside its chips, collapsing to stacked rows when the
+   two columns no longer fit side by side. */
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-top: 1px solid oklch(26% 0.02 260);
+}
+
+.skill-row:first-child {
+  border-top: none;
+  padding-top: 4px;
+}
+
+.skill-row:last-child {
+  padding-bottom: 4px;
+}
+
+@media (max-width: 760px) {
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Extracurricular: badge beside its text, divided row by row. */
+
+.extra-row {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid oklch(26% 0.02 260);
+}
+
+.extra-row:first-child {
+  border-top: none;
+}
+
+/* Hobbies: emoji beside its text, divided row by row. */
+
+.hobby-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-top: 1px solid oklch(26% 0.02 260);
+}
+
+.hobby-row:first-child {
+  border-top: none;
+}
+
 .hv-a2:hover {
   color: var(--a2);
 }
