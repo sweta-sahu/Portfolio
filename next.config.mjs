@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/Portfolio';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/Portfolio',
+  basePath,
   reactStrictMode: true,
   images: {
     unoptimized: true,

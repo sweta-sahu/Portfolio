@@ -23,6 +23,4 @@ export const NAV_HEIGHT = 75;
 export const mono = "var(--font-jetbrains-mono), 'JetBrains Mono', monospace";
 export const display = "var(--font-space-grotesk), 'Space Grotesk', sans-serif";
 
-// Keep in sync with `basePath` in next.config.mjs — plain <a>/<img> hrefs are
-// not rewritten by Next.
-export const BASE = '/Portfolio';
+export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '/Portfolio';
